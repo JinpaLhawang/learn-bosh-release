@@ -38,10 +38,22 @@ jobs:
 - name: app
   templates:
   - name: app
-  instances: 1
+  instances: 2
   resource_pool: default
   networks:
   - name: default
     static_ips:
     - 10.244.50.2
-  properties: {}
+    - 10.244.50.6
+  properties:
+    port: 8888
+- name: router
+  templates:
+  - name: router
+  instances: 1
+  resource_pool: default
+  networks:
+  - name: default
+    static_ips: [10.244.50.10]
+  properties:
+    servers: ['http://10.244.50.2:8888','http://10.244.50.6:8888']
