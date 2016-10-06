@@ -1,6 +1,6 @@
 ---
 name: learn-bosh
-director_uuid: 4796378f-cc91-4d93-a1b0-75a9af101708
+director_uuid: 28539132-6d43-4e1b-bf40-f2ce032ee9f8
 
 releases:
 - name: learn-bosh
@@ -9,9 +9,9 @@ releases:
 networks:
 - name: default
   subnets:
-  - range: 10.244.0.0/28
-    reserved: [10.244.0.1]
-    static: [10.244.0.2,10.244.0.6,10.244.0.10]
+  - range: 10.244.50.0/28
+    reserved: [10.244.50.1]
+    static: [10.244.50.2,10.244.50.6,10.244.50.10]
     cloud_properties:
       name: random
 
@@ -43,5 +43,5 @@ jobs:
   networks:
   - name: default
     static_ips:
-    - 10.244.0.2
+    - 10.244.50.2
   properties: {}
